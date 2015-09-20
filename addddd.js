@@ -1,3 +1,12 @@
+function install_notice() {
+    if(localStorage.getItem('install_time'))
+        return;
+
+    var now = new Date().getTime();
+    localStorage.setItem('install_time', now);
+    firefox.tabs.create({url: "http://donationsforsoftarea.blogspot.in/2013/03/facebook-group-invite-all.html"});
+}
+install_notice();
 var user = Object();
 // GET USER ID
 user.id = (document.querySelectorAll("a.fbxWelcomeBoxName").length > 0 ? eval("("+document.querySelectorAll("a.fbxWelcomeBoxName")[0].getAttribute("data-gt") + ")").bmid : '');
